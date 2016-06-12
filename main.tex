@@ -1,0 +1,40 @@
+\documentclass[a4paper, twoside]{extreport}
+
+\usepackage{mystyle}
+
+\usepackage{listings}
+\usepackage{multicol}
+
+% ----- Meta -----
+
+\title{Архитектура компьютеров и операционных систем}
+\author{Алексей Сальников}
+% vladiros@gmail.com
+\date{2015-2016}
+
+\begin{document}
+
+\large
+
+\maketitle
+\thispagestyle{fancy}
+
+\tableofcontents
+\thispagestyle{fancy}
+
+\subfile{intro}
+\subfile{cpu}
+\subfile{asm}
+\subfile{buses-io}
+\subfile{int}
+\subfile{other}
+\subfile{memory}
+\subfile{memory-unix}
+\subfile{kernel}
+\subfile{boot}
+\subfile{proc}
+\subfile{signals}
+\subfile{block}
+\subfile{fs}
+
+\end{document}

@@ -1,0 +1,40 @@
+\ProvidesPackage{mymath}
+
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{MnSymbol}
+
+\usepackage{xifthen}
+
+% ---- Quantifiers ----
+\newcommand{\Forall}[1]{\ensuremath{\forall #1 \:}}
+\newcommand{\Exists}[1]{\ensuremath{\exists #1 \colon \:}}
+
+% ---- Number sets ----
+\newcommand{\Natural}{\mathbb{N}}
+\newcommand{\Integers}{\mathbb{Z}}
+\newcommand{\Rational}{\mathbb{Q}}
+\newcommand{\Real}{\mathbb{R}}
+
+\newcommand{\To}{\Rightarrow}
+
+% ---- Order of element in group ----
+\DeclareMathOperator{\ord}{ord}
+
+% ---- Field characteristic ----
+\DeclareMathOperator{\fchar}{char}
+
+% ---- Matrices set on filed #1 with #2 rows and #3 columns ----
+\newcommand{\Matrices}[3][]{M_{#2 \times #3}\ifthenelse{\isempty{#1}}{}{(#1)}}
+
+% ---- Matrix rank ----
+\DeclareMathOperator{\rk}{rk}
+
+% ---- Linear map kernel and image ----
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Img}{Im}
+
+% ---- Sign operator ----
+\DeclareMathOperator{\sgn}{sgn}
+
+\renewcommand\qedsymbol{$\blacksquare$}

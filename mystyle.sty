@@ -1,0 +1,100 @@
+\ProvidesPackage{mystyle}
+
+% ---- Russian language ----
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+% ---- Chapter separation and compilation ----
+\usepackage{subfiles}
+
+% ---- Visual setings ----
+\usepackage[top=1in, bottom=1in, left=1.2in, right=1.2in]{geometry}
+\usepackage{xcolor}
+
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks, breaklinks, urlcolor=linkcolour, linkcolor=linkcolour}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[LE, RO]{\large\scshape\thepage}
+\fancyhead[RE]{\large\scshape{ФИВТ МФТИ}}
+\fancyhead[LO]{\large\scshape{\@title}}
+\fancyfoot{}
+
+\renewcommand{\baselinestretch}{1.2}
+
+% ---- Vector graphics ----
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+% ---- Math packages ----
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{euscript}
+\usepackage{mathalfa}
+\usepackage{esvect}
+
+\usepackage{mymath}
+
+% ---- Enumerate only referenced equations ----
+\mathtoolsset{showonlyrefs}
+
+% ----- amsthm environments -----
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Теорема}[chapter]
+\newtheorem{proposition}{Утверждение}[chapter]
+\newtheorem{lemma}{Лемма}[chapter]
+\newtheorem*{corollary}{Следствие}
+\newtheorem*{fact}{Факт}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Определение}[chapter]
+\newtheorem*{example}{Пример}
+\newtheorem*{exercise}{Упражнение}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Замечание}
+
+% ----- Title page -----
+
+\makeatletter
+
+\renewcommand*{\maketitle}{%
+\begin{titlepage}
+
+\newlength{\drop}
+\drop=0.1\textheight
+
+\rule{\textwidth}{1pt}\par
+\vspace{2pt}\vspace{-\baselineskip}
+\rule{\textwidth}{0.4pt}\par
+
+\vspace{\drop}
+\centering
+{\Huge \textsc{\@title}}\\[0.5\baselineskip]
+
+\vspace{0.25\drop}
+\rule{0.3\textwidth}{0.4pt}\par
+\vspace{\drop}
+
+{\Large \textsc{\@author}}\par
+
+\vfill
+{\large \textsc{ФИВТ МФТИ}}\par
+{\large \textsc{\@date}}\par
+
+\vspace*{\drop}
+
+\rule{\textwidth}{0.4pt}\par
+\vspace{2pt}\vspace{-\baselineskip}
+\rule{\textwidth}{1pt}\par
+
+\end{titlepage}
+}
+
+\makeatother
